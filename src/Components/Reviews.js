@@ -14,7 +14,7 @@ const Reviews = () => {
     >
       <Navbar/>
       <Link to="/">
-        <FaArrowLeft size={25} style={{ color: 'white', position: 'relative', left: '15px', top: '15px' }} />
+        <FaArrowLeft size={25} style={{ color: '#ed8936', position: 'relative', left: '15px', top: '15px' }} />
       </Link>
       <h2 style={{ fontSize: '2.5rem', textAlign: 'center', color: 'black' }}>
         People's <span></span>
