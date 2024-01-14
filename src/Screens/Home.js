@@ -71,7 +71,7 @@ function Home() {
           </div>
           <div class="carousel-item">
             <img
-              src="https://source.unsplash.com/random/900x700/?barbeque"
+              src="https://source.unsplash.com/random/900x700/?pizza"
               class="d-block w-100"
               alt="..."
               style={{ filter: "brightness(30%)" }}
