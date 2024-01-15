@@ -3,6 +3,7 @@ import { vegetarianFoodItems } from '../Data/data';
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Navbar from './Navbar';
+import Footer from './Footer'
 function VegMenu() {
     return (
         <div 
@@ -61,6 +62,7 @@ function VegMenu() {
               );
             })}
           </div>
+          <Footer/>
         </div>
       );
 }
