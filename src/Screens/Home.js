@@ -55,18 +55,10 @@ function Home() {
           </div>
           <div class="carousel-item active">
             <img
-              src="https://source.unsplash.com/random/900x700/?burger"
+              src="https://source.unsplash.com/random/900x700/?fries"
               class="d-block w-100"
               alt="..."
-              style={{ filter: "brightness(80%)" }}
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://source.unsplash.com/random/900x700/?pastry"
-              class="d-block w-100"
-              alt="..."
-              style={{ filter: "brightness(30%)" }}
+              style={{ filter: "brightness(40%)" }}
             />
           </div>
           <div class="carousel-item">
@@ -74,7 +66,15 @@ function Home() {
               src="https://source.unsplash.com/random/900x700/?pizza"
               class="d-block w-100"
               alt="..."
-              style={{ filter: "brightness(30%)" }}
+              style={{ filter: "brightness(40%)" }}
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://source.unsplash.com/random/900x700/?burger"
+              class="d-block w-100"
+              alt="..."
+              style={{ filter: "brightness(40%)" }}
             />
           </div>
         </div>
@@ -100,7 +100,11 @@ function Home() {
       <div className="container">
         {foodCat &&
           foodCat.map((data) => (
-            <div key={data._id} className="fs-3 m-3" style={{color:'#CC5500'}}>
+            <div
+              key={data._id}
+              className="fs-3 m-3"
+              style={{ color: "#CC5500" }}
+            >
               {data.CategoryName}
               <hr />
               <div className="row">

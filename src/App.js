@@ -12,6 +12,7 @@ import MyOrder from "./Screens/MyOrder.js";
 import VegMenu from "./Components/VegMenu.js";
 import NonVeg from "./Components/NonVeg.js";
 import Reviews from "./Components/Reviews.js";
+import { FaUtensils } from 'react-icons/fa';
 
 function App() {
   const [load, setLoad] = useState(true);
@@ -49,7 +50,7 @@ function App() {
               fontWeight: 600,
             }}
           >
-            Grab<span style={{ color: "#ed8936" }}>Food</span>
+            Grab<span style={{ color: "#ed8936" }}>Food <FaUtensils size={35}/></span>
           </h1>
         </div>
       ) : (

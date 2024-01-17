@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function Footer() {
   return (
     <footer className="py-5">
@@ -30,7 +31,8 @@ function Footer() {
               </Link>
             </li>
           </ul>
-          <p className="text-center text-muted">© 2021 GOFOOD, Inc</p>
+          <p className="text-center text-muted">© 2021 GRABFOOD, Inc</p>
+          <p className="" style={{color:'grey',fontSize:'55px',display:'inline'}}>GrabFood   </p> 
         </div>
 
         <div className="col-4 offset-1">
@@ -41,7 +43,7 @@ function Footer() {
           >
             <h5>Subscribe to our newsletter</h5>
             <p>Monthly digest of whats new and exciting from us.</p>
-            <div className="d-flex w-100 gap-2">
+            <div className=" w-100 gap-2" style={{display:'flex',flexDirection:'column'}}>
               <label for="newsletter1" className="visually-hidden">
                 Email address
               </label>

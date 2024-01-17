@@ -5,6 +5,7 @@ import Modal from "../Modal.js";
 import Cart from "../Screens/Cart";
 import { useCart } from "./ContextReducer.js";
 import { FaBars } from "react-icons/fa";
+import { FaUtensils } from 'react-icons/fa';
 
 function NavigationBar() {
   let data = useCart();
@@ -35,7 +36,7 @@ function NavigationBar() {
           style={{ fontWeight: "bold", }}
           to="/"
         >
-          GrabFood
+          GrabFood <FaUtensils size={30}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           <FaBars className="text-white" />
