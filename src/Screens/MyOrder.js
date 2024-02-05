@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import Footer from '../Components/Footer'
+import Footer from "../Components/Footer";
 
 export default function MyOrder() {
   const [orderData, setorderData] = useState({});
@@ -60,7 +60,6 @@ export default function MyOrder() {
                         className="m-auto mt-5 text-white d-flex"
                         key={index}
                       >
-                        
                         <hr />
                       </div>
                     ) : (
@@ -124,7 +123,7 @@ export default function MyOrder() {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

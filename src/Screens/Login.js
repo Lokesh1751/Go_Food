@@ -1,25 +1,25 @@
-import React,{useState} from 'react'
-import {Link,useNavigate} from 'react-router-dom'
-import Navbar from '../Components/Navbar';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 function Login() {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
- // Corrected the field name to "geolocation"
+    // Corrected the field name to "geolocation"
   });
-  let navigate=useNavigate();
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:4000/api/loginuser", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: credentials.email,
         password: credentials.password,
-   // Corrected the key name to "geolocation"
+        // Corrected the key name to "geolocation"
       }),
     });
     const json = await response.json();
@@ -28,11 +28,10 @@ function Login() {
       alert("Enter Valid Credentials");
     }
     if (json.success) {
-      localStorage.setItem('userEmail',credentials.email)
-      localStorage.setItem('authToken', json.authToken);
+      localStorage.setItem("userEmail", credentials.email);
+      localStorage.setItem("authToken", json.authToken);
 
-     
-     navigate("/")
+      navigate("/");
     }
   };
 
@@ -40,53 +39,73 @@ function Login() {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
   return (
-    <div style={{ backgroundImage: 'url("https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', backgroundSize: 'cover',height: '100vh' }}>
-    <div>
-    <Navbar />
-    </div>
-       <div className="container" >
-      <form onSubmit={handleSubmit} className='w-50 m-auto mt-5 border bg-dark  rounded' style={{borderColor:'#ed8936'}}>
-
-        <div className="m-3">
-          <label htmlFor="exampleInputEmail1" className="form-label text-white">
-            Email address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-            value={credentials.email}
-            onChange={onChangeHandler}
-          />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+    <div
+      style={{
+        backgroundImage:
+          'url("https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
+        backgroundSize: "cover",
+        height: "100vh",
+      }}
+    >
+      <div>
+        <Navbar />
+      </div>
+      <div className="container">
+        <form
+          onSubmit={handleSubmit}
+          className="w-50 m-auto mt-5 border bg-dark  rounded"
+          style={{ borderColor: "#ed8936" }}
+        >
+          <div className="m-3">
+            <label
+              htmlFor="exampleInputEmail1"
+              className="form-label text-white"
+            >
+              Email address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="email"
+              value={credentials.email}
+              onChange={onChangeHandler}
+            />
+            <div id="emailHelp" className="form-text">
+              We'll never share your email with anyone else.
+            </div>
           </div>
-        </div>
-        <div className="m-3">
-          <label htmlFor="exampleInputPassword1" className="form-label text-white">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            name="password"
-            value={credentials.password}
-            onChange={onChangeHandler}
-          />
-        </div>
-        <button type="submit" className=" m-3 btn text-white" style={{backgroundColor:'#ed8936'}}>
-          Submit
-        </button>
-        <Link to="/createuser" className="m-3 btn btn-danger">
-          I'm a new User
-        </Link>
-      </form>
+          <div className="m-3">
+            <label
+              htmlFor="exampleInputPassword1"
+              className="form-label text-white"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              name="password"
+              value={credentials.password}
+              onChange={onChangeHandler}
+            />
+          </div>
+          <button
+            type="submit"
+            className=" m-3 btn text-white"
+            style={{ backgroundColor: "#ed8936" }}
+          >
+            Submit
+          </button>
+          <Link to="/createuser" className="m-3 btn btn-danger">
+            I'm a new User
+          </Link>
+        </form>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

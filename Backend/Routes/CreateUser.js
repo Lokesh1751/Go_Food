@@ -15,6 +15,7 @@ router.post(
     body("password", "Password must be at least 5 characters long").isLength({
       min: 5,
     }),
+    body("password").contains('@')
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -24,7 +25,6 @@ router.post(
     try {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
       await User.create({
         name: req.body.name,
         location: req.body.location,

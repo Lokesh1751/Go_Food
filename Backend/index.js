@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 4000;
+const cors=require("cors")
+const dotenv=require("dotenv")
 const mongoDB = require('./db');
 app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
@@ -15,9 +17,13 @@ mongoDB().then(() => {
     res.send('Hello World');
   });
   app.use(express.json())
+  app.use(cors())
+  dotenv.config();
   app.use('/api',require("./Routes/CreateUser"))
    app.use('/api',require("./Routes/DisplayData"))
    app.use('/api',require("./Routes/OrderData"))
+   app.use('/api',require("./Routes/Payment"))
+   app.use('/api',require("./Routes/CreateReview"))
   app.listen(port, () => {
     console.log(`Running on ${port}`);
   });

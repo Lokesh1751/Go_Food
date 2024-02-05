@@ -20,6 +20,7 @@ function NavigationBar() {
   const toggleCartView = () => {
     setCartView((prevCartView) => !prevCartView);
   };
+ 
 
   return (
     <>
@@ -111,6 +112,7 @@ function NavigationBar() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      marginLeft:'70px'
                       
                     }}
                   >
