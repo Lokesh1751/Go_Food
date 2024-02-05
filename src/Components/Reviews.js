@@ -61,11 +61,11 @@ const Reviews = () => {
             <div
               key={item._id} // Use a unique key for each element in the array
               style={{
-                width: "40%",
+                width: "45%",
                 backgroundColor: "black",
                 color: "white",
                 borderRadius: "0.5rem",
-                marginLeft: "5rem",
+                marginLeft: "1rem",
                 marginTop: "2rem",
                 padding: "1rem",
                 cursor: "pointer",
